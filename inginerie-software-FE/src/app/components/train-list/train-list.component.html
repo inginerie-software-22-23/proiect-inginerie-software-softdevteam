@@ -1,0 +1,42 @@
+<div class="container-fluid" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-primary">
+  
+                <div class="panel-heading">
+                    <h1 class="panel-title">Train List</h1>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive" th:if="${not #lists.isEmpty(recipes)}">
+                        <table class="table table-hover ">
+                            <thead class="thead-inverse">
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Number of seats</th>
+                                <th>Departure Time</th>
+                                <th>Arrival Time</th>
+
+                                
+                            </tr>
+                            </thead>
+                            <tr *ngFor="let train of trains">
+                                <td >{{train.id}}</td>
+                                <td >{{train.name}}</td>
+                                <td >{{train.numOfSeats}}</td>
+                                <td >{{train.departureTime}}</td>
+                                <td >{{train.arrivalTime}}</td>
+
+                                
+                                
+                            </tr>
+                        </table>
+                    </div>
+                    <hr>
+                    <button class="btn btn-primary" routerLink="new-train">Add New Train</button>
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
